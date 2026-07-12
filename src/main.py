@@ -1,10 +1,9 @@
-# from config import CLAUDE_API_KEY
+from prompt_loader import build_prompt
+from claude_client import generate_text
+from discord_sender import send_to_discord
 
-# print(CLAUDE_API_KEY)
+prompt = build_prompt()
 
+response = generate_text(prompt)
 
-from config import CLAUDE_API_KEY
-
-print("開始")
-print(CLAUDE_API_KEY)
-print("終了")
+send_to_discord(response)
